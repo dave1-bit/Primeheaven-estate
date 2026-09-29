@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PrimeHaven Estates - Premium homes and properties in Lagos, Nigeria.">
+<title>PrimeHaven Estates | Find Your Dream Home</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;color:#17202a;background:#f7f8fa;line-height:1.6}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,22,32,.94);backdrop-filter:blur(12px);color:#fff}
+.nav-inner{max-width:1180px;margin:auto;padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:800;letter-spacing:.3px}.logo span{color:#d8b36a}
+.links{display:flex;gap:28px;align-items:center}.links a{font-size:14px;color:#e9eef2}.links a:hover{color:#d8b36a}
+.menu{display:none;background:none;border:0;color:#fff;font-size:26px}
+.hero{min-height:720px;padding:150px 22px 90px;background:linear-gradient(90deg,rgba(7,19,29,.88),rgba(7,19,29,.35)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;color:#fff}
+.hero-content{max-width:1180px;width:100%;margin:auto}.eyebrow{color:#d8b36a;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800;margin-bottom:15px}
+.hero h1{font-size:clamp(42px,7vw,78px);line-height:1.03;max-width:760px;margin-bottom:22px}.hero p{max-width:620px;color:#e5eaee;font-size:18px;margin-bottom:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:14px 22px;font-weight:800;cursor:pointer;transition:.25s}.primary{background:#d8b36a;color:#13202a}.primary:hover{transform:translateY(-2px);filter:brightness(1.08)}.outline{border:1px solid #ffffff66;color:#fff;margin-left:10px}.outline:hover{background:#fff;color:#15232e}
+.search{max-width:1050px;margin:-42px auto 0;background:#fff;border-radius:14px;box-shadow:0 18px 45px #15232e22;padding:22px;position:relative;z-index:3}.search h3{margin-bottom:15px}.search-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:12px}.field{border:1px solid #e0e5e9;border-radius:8px;padding:12px 13px;background:#fafbfc}.field label{display:block;font-size:11px;text-transform:uppercase;color:#7a858d;font-weight:700}.field select,.field input{width:100%;border:0;outline:0;background:transparent;margin-top:3px;color:#17202a}
+.section{max-width:1180px;margin:auto;padding:90px 22px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:32px}.section-head h2{font-size:36px;line-height:1.1}.muted{color:#707b83}.properties{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px #15232e12;transition:.3s}.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px #15232e1b}.photo{height:225px;position:relative;background-size:cover;background-position:center}.tag{position:absolute;top:14px;left:14px;background:#d8b36a;color:#18232b;font-size:11px;font-weight:900;text-transform:uppercase;padding:6px 9px;border-radius:5px}.heart{position:absolute;right:14px;top:14px;width:36px;height:36px;border:0;border-radius:50%;background:#fff;color:#1a2730;cursor:pointer;font-size:18px}.card-body{padding:20px}.price{font-size:22px;font-weight:900;margin-bottom:5px}.location{font-size:13px;color:#707b83;margin-bottom:16px}.features{display:flex;gap:16px;border-top:1px solid #edf0f2;padding-top:14px;font-size:13px;color:#55616a}
+.about{background:#102431;color:#fff}.about-grid{max-width:1180px;margin:auto;padding:90px 22px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.about-img{min-height:470px;border-radius:16px;background:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85') center/cover}.about h2{font-size:44px;line-height:1.1;margin:10px 0 20px}.about p{color:#c7d0d5;margin-bottom:18px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}.stat{border-left:2px solid #d8b36a;padding-left:12px}.stat b{font-size:25px;display:block}.stat span{font-size:12px;color:#aebbc2}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service{background:#fff;padding:30px;border-radius:12px;border:1px solid #e8ecef}.icon{font-size:30px;margin-bottom:12px}.service h3{margin-bottom:8px}.service p{font-size:14px;color:#68747c}
+.testimonials{background:#eef1f3}.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.quote{background:#fff;padding:25px;border-radius:12px}.stars{color:#c69745;margin-bottom:12px}.quote p{font-size:14px;color:#59656d;margin-bottom:18px}.person{font-weight:800;font-size:13px}
+.contact{background:#d8b36a}.contact-inner{max-width:1180px;margin:auto;padding:65px 22px;display:flex;justify-content:space-between;gap:30px;align-items:center}.contact h2{font-size:36px;line-height:1.15}.dark{background:#102431;color:#fff}
+footer{background:#09151d;color:#aebbc2;padding:35px 22px}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px}.footer-logo{color:#fff;font-weight:800}.footer-logo span{color:#d8b36a}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:100;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{background:#fff;max-width:520px;width:100%;border-radius:14px;padding:28px;position:relative}.close{position:absolute;right:15px;top:10px;border:0;background:none;font-size:25px;cursor:pointer}.modal-box h2{margin-bottom:8px}.modal-box p{color:#69757d;margin-bottom:20px}.modal-box input,.modal-box textarea{width:100%;padding:12px;border:1px solid #dce2e6;border-radius:7px;margin-bottom:12px;outline:none}.modal-box textarea{height:100px;resize:vertical}
+@media(max-width:800px){
+.links{display:none;position:absolute;top:64px;left:0;right:0;background:#0a1620;padding:20px 22px;flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu{display:block}
+.hero{min-height:650px}.search-grid{grid-template-columns:1fr 1fr}.properties,.services,.quotes{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:35px}.about-img{min-height:330px}.contact-inner,.footer-inner{flex-direction:column;align-items:flex-start}.section{padding:70px 20px}.section-head{align-items:flex-start;gap:10px;flex-direction:column}
+}
+@media(max-width:500px){.search-grid{grid-template-columns:1fr}.hero{padding-top:130px}.outline{margin-left:0;margin-top:10px}.hero .btn{width:100%}.stats{grid-template-columns:1fr 1fr}.about h2{font-size:34px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">Prime<span>Haven</span></a>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+    <div class="links" id="navLinks">
+      <a href="#home">Home</a><a href="#properties">Properties</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Premium real estate • Lagos, Nigeria</div>
+    <h1>Find a place you'll be proud to call home.</h1>
+    <p>Discover carefully selected homes, apartments and investment properties in some of Lagos' most desirable locations.</p>
+    <a class="btn primary" href="#properties">Explore Properties</a>
+    <a class="btn outline" href="#contact">Talk to an Agent</a>
+  </div>
+</header>
+
+<section class="search">
+  <h3>Find your property</h3>
+  <div class="search-grid">
+    <div class="field"><label>Location</label><input id="location" placeholder="e.g. Lekki"></div>
+    <div class="field"><label>Property type</label><select id="type"><option value="all">Any type</option><option>Apartment</option><option>Duplex</option><option>Terrace</option></select></div>
+    <div class="field"><label>Budget</label><select id="budget"><option value="all">Any budget</option><option value="100">Up to ₦100m</option><option value="200">₦100m – ₦200m</option><option value="999">₦200m+</option></select></div>
+    <button class="btn primary" onclick="filterProperties()">Search</button>
+  </div>
+</section>
+
+<section class="section" id="properties">
+  <div class="section-head">
+    <div><div class="eyebrow">Featured listings</div><h2>Properties worth seeing</h2></div>
+    <div class="muted" id="count"></div>
+  </div>
+  <div class="properties" id="propertyGrid">
+
+    <article class="card property" data-location="lekki" data-type="Duplex" data-price="185">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80')"><span class="tag">For Sale</span><button class="heart" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="card-body"><div class="price">₦185,000,000</div><div class="location">📍 Lekki Phase 1, Lagos</div><div class="features"><span>🛏 5 Beds</span><span>🛁 5 Baths</span><span>📐 450m²</span></div></div>
+    </article>
+
+    <article class="card property" data-location="ikoyi" data-type="Apartment" data-price="120">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80')"><span class="tag">Featured</span><button class="heart" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="card-body"><div class="price">₦120,000,000</div><div class="location">📍 Ikoyi, Lagos</div><div class="features"><span>🛏 3 Beds</span><span>🛁 3 Baths</span><span>📐 210m²</span></div></div>
+    </article>
+
+    <article class="card property" data-location="ajah" data-type="Terrace" data-price="92">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80')"><span class="tag">For Sale</span><button class="heart" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="card-body"><div class="price">₦92,000,000</div><div class="location">📍 Ajah, Lagos</div><div class="features"><span>🛏 4 Beds</span><span>🛁 4 Baths</span><span>📐 280m²</span></div></div>
+    </article>
+
+    <article class="card property" data-location="victoria island" data-type="Apartment" data-price="210">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80')"><span class="tag">Luxury</span><button class="heart" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="card-body"><div class="price">₦210,000,000</div><div class="location">📍 Victoria Island, Lagos</div><div class="features"><span>🛏 4 Beds</span><span>🛁 4 Baths</span><span>📐 320m²</span></div></div>
+    </article>
+
+    <article class="card property" data-location="yaba" data-type="Apartment" data-price="68">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80')"><span class="tag">New</span><button class="heart" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="card-body"><div class="price">₦68,000,000</div><div class="location">📍 Yaba, Lagos</div><div class="features"><span>🛏 2 Beds</span><span>🛁 2 Baths</span><span>📐 125m²</span></div></div>
+    </article>
+
+    <article class="card property" data-location="banana island" data-type="Duplex" data-price="450">
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80')"><span class="tag">Premium</span><button class="heart" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="card-body"><div class="price">₦450,000,000</div><div class="location">📍 Banana Island, Lagos</div><div class="features"><span>🛏 6 Beds</span><span>🛁 7 Baths</span><span>📐 700m²</span></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img"></div>
+    <div>
+      <div class="eyebrow">Why PrimeHaven</div>
+      <h2>Property decisions made simpler.</h2>
+      <p>We connect buyers, renters and investors with quality properties while keeping the process clear, professional and straightforward.</p>
+      <p>From your first viewing to closing, our team is focused on helping you understand the property, the location and the transaction.</p>
+      <div class="stats"><div class="stat"><b>8+</b><span>Years experience</span></div><div class="stat"><b>350+</b><span>Properties listed</span></div><div class="stat"><b>1,200+</b><span>Happy clients</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-head"><div><div class="eyebrow">Our services</div><h2>Everything property, under one roof.</h2></div></div>
+  <div class="services">
+    <div class="service"><div class="icon">🏠</div><h3>Property Sales</h3><p>Find residential and investment properties selected for different budgets and lifestyles.</p></div>
+    <div class="service"><div class="icon">🔑</div><h3>Property Rentals</h3><p>Explore apartments, houses and serviced homes available across prime Lagos locations.</p></div>
+    <div class="service"><div class="icon">📈</div><h3>Property Investment</h3><p>Get practical guidance when evaluating properties for long-term investment.</p></div>
+  </div>
+</section>
+
+<section class="section testimonials">
+  <div class="section-head"><div><div class="eyebrow">Client stories</div><h2>What clients say</h2></div></div>
+  <div class="quotes">
+    <div class="quote"><div class="stars">★★★★★</div><p>“The team made the search much easier. I was able to compare several properties before choosing one.”</p><div class="person">— Daniel O.</div></div>
+    <div class="quote"><div class="stars">★★★★★</div><p>“Professional communication from viewing to documentation. Everything was explained clearly.”</p><div class="person">— Amaka E.</div></div>
+    <div class="quote"><div class="stars">★★★★★</div><p>“I wanted an investment property and got useful information about the location and the options available.”</p><div class="person">— Michael A.</div></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div><div class="eyebrow">Let's talk property</div><h2>Ready to find your next property?</h2></div>
+    <div><button class="btn dark" onclick="openModal()">Contact an Agent</button><a class="btn dark" href="https://wa.me/2348000000000?text=Hello%20PrimeHaven,%20I%20am%20interested%20in%20a%20property." target="_blank">WhatsApp Us</a></div>
+  </div>
+</section>
+
+<footer><div class="footer-inner"><div class="footer-logo">Prime<span>Haven</span> Estates</div><div>© 2026 PrimeHaven Estates. All rights reserved.</div></div></footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">×</button>
+    <h2>Speak with an agent</h2><p>Send your details and we'll get back to you.</p>
+    <input id="name" placeholder="Your name">
+    <input id="phone" placeholder="Phone / WhatsApp number">
+    <textarea id="message" placeholder="Tell us what property you're looking for"></textarea>
+    <button class="btn primary" style="width:100%" onclick="sendWhatsApp()">Send via WhatsApp</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+function openModal(){document.getElementById('modal').classList.add('show')}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+window.onclick=e=>{if(e.target.id==='modal')closeModal()}
+
+function filterProperties(){
+  const loc=document.getElementById('location').value.toLowerCase().trim();
+  const type=document.getElementById('type').value;
+  const budget=document.getElementById('budget').value;
+  let shown=0;
+  document.querySelectorAll('.property').forEach(card=>{
+    const okLoc=!loc || card.dataset.location.includes(loc);
+    const okType=type==='all' || card.dataset.type===type;
+    const price=Number(card.dataset.price);
+    const okBudget=budget==='all'||(budget==='100'&&price<=100)||(budget==='200'&&price>100&&price<=200)||(budget==='999'&&price>200);
+    const show=okLoc&&okType&&okBudget;
+    card.style.display=show?'block':'none'; if(show)shown++;
+  });
+  document.getElementById('count').textContent=shown+' property'+(shown===1?'':'ies')+' found';
+  document.getElementById('properties').scrollIntoView({behavior:'smooth'});
+}
+function sendWhatsApp(){
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const msg=document.getElementById('message').value.trim();
+  if(!name||!phone){alert('Please enter your name and phone number.');return}
+  const text=`Hello PrimeHaven, my name is ${name}. My WhatsApp/phone is ${phone}. ${msg}`;
+  window.open('https://wa.me/2348000000000?text='+encodeURIComponent(text),'_blank');
+}
+document.getElementById('count').textContent=document.querySelectorAll('.property').length+' properties';
+</script>
+</body>
+</html>
